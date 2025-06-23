@@ -2,6 +2,7 @@ import 'package:dev_03/wrapper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -41,6 +42,7 @@ class _SignupPageState extends State<SignupPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Lottie.asset('assets/animation/animation-3.json',height: 250),
                 const Text(
                   "Join Let's Grow 🌼",
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),

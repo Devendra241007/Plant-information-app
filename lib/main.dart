@@ -1,3 +1,4 @@
+import 'package:dev_03/Splashscreen.dart';
 import 'package:dev_03/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -28,7 +29,7 @@ class PlantApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: wrapper(),
+      home: Splashscreen(),
     );
   }
 }

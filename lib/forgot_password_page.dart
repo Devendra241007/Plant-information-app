@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -27,8 +28,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Lottie.asset('assets/animation/animation-5.json',height: 300),
             const Text(
               "Recover your password 🌿",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
