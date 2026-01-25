@@ -1,58 +1,60 @@
 
 # 🌱 PlantInfo — Plant Information App
 
-**License:** Flutter · XML (Offline Data)
+**License:** Flutter · Local Data (XML / Dart)
 
-PlantInfo is a lightweight Flutter application that provides **detailed information about plants** in a clean and structured format.  
-The app is designed to load **plant descriptions from an XML file**, while **plant names and images are stored locally**, ensuring fast performance and offline accessibility.
+PlantInfo is a Flutter-based plant information application that provides **detailed knowledge about plants**, categorized into **Featured**, **Popular**, and **Rare** sections.  
+The app focuses on **offline-friendly data handling**, clean UI, and structured navigation.
 
 ---
 
 ## 🌟 Overview
 
-PlantInfo is built as:
+PlantInfo is designed as:
 - A **plant reference app** for users
-- A **portfolio-grade Flutter project** demonstrating structured local data handling
+- A **portfolio-grade Flutter project** demonstrating structured local data management
 
 The app focuses on:
-- Offline data access
-- XML parsing in Flutter
-- Clean UI and simple navigation
-- Efficient data loading using indexes
+- Category-based plant browsing
+- Local data storage (no backend)
+- Clean UI and smooth navigation
+- Simple and maintainable architecture
 
 ---
 
 ## 🧠 What PlantInfo Does
 
-- 🌿 Displays a list of plants with **name and image**
-- 📖 Loads **detailed plant descriptions from XML**
-- 🔢 Fetches plant data **based on selected index**
-- ⚡ Works **offline** without any backend or API
-- 🧩 Keeps data organized and lightweight
+- 🌿 Displays plants in **Featured**, **Popular**, and **Rare** categories
+- 📖 Shows **detailed plant information** on selection
+- 🖼️ Uses **locally stored plant images**
+- 📄 Loads plant content from **local data sources**
+- ⚡ Works completely **offline**
+- 🎯 Provides fast and lightweight performance
 
 ---
 
 ## ✨ Features
 
-### 🌱 Plant List
-- Displays plant names and images
-- Data stored locally for fast loading
-- Clean and scrollable list UI
+### 🌟 Featured Plants
+- Curated list of highlighted plants
+- Dedicated detail screens
+- Clean card-based UI
 
-### 📄 Plant Description
-- Detailed plant information loaded from XML
-- Parsed dynamically based on plant index
-- Supports structured and expandable descriptions
+### 🌿 Popular Plants
+- Frequently known and commonly used plants
+- Separate list and detail screens
+- Easy navigation between plants
 
-### 📦 Offline Support
-- No internet connection required
-- XML file bundled with the app
-- Ideal for low-data environments
+### 🌱 Rare Plants
+- Rare and unique plant collection
+- Individual detail screens
+- Structured plant information
 
-### 🎨 Simple UI
-- Clean and minimal Flutter UI
-- Focused on readability and content
-- Easy navigation between screens
+### 🎨 User Interface
+- Clean Flutter UI
+- Consistent color theming
+- Simple navigation flow
+- Splash screen on app launch
 
 ---
 
@@ -64,29 +66,23 @@ The app focuses on:
 - Material UI
 
 ### 🔹 Data Handling
-- XML file for plant descriptions
-- Local asset storage for images
-- Index-based data mapping
+- Local Dart data files
+- XML / structured local content
+- Asset-based image storage
 
 ### 🔹 Architecture
-- Simple modular structure
+- Feature-based folder organization
 - Separation of UI and data logic
-- Easy to maintain and extend
+- Easy to scale and maintain
 
 ---
 
-## ☁️ Data Architecture (XML-Based)
+## ☁️ Data Architecture
 
-- Plant descriptions stored in an **XML file**
-- Each plant description mapped using an **index**
-- Plant names and images stored in local lists
-- XML parsing handled at runtime
-- No database or API required
-
-This approach ensures:
-- Fast loading
-- Offline availability
-- Clean data separation
+- Plant data stored locally (no API or backend)
+- Plant details loaded from structured local files
+- Categories managed through feature folders
+- Fast access and offline availability
 
 ---
 
@@ -94,22 +90,23 @@ This approach ensures:
 
 ```text
 lib/
-├── models/
-│   └── plant_model.dart
+├── Featured/
+│   ├── featuredplants.dart
+│   └── Plantinformation.dart
 │
-├── data/
-│   └── plant_descriptions.xml
+├── Popular/
+│   ├── popularplants.dart
+│   └── popularplantdetail.dart
 │
-├── utils/
-│   └── xml_parser.dart
+├── Rare/
+│   ├── RarePlantslist.dart
+│   └── RarePlantsDetail.dart
 │
-├── screens/
-│   ├── plant_list_screen.dart
-│   └── plant_detail_screen.dart
-│
-├── widgets/
-│   └── plant_card.dart
-│
+├── colors.dart
+├── data.dart
+├── HomeScreen.dart
+├── Splashscreen.dart
+├── wrapper.dart
 └── main.dart
 ````
 
@@ -117,25 +114,30 @@ lib/
 
 ## 🧩 Architecture Overview
 
-* **Model Layer**
-  Defines plant data structure.
+* **Featured Module**
+  Displays highlighted plants with detailed information.
 
-* **Data Layer**
-  XML file containing plant descriptions.
+* **Popular Module**
+  Manages commonly known plants with list and detail views.
 
-* **Utils Layer**
-  Handles XML parsing and index-based data retrieval.
+* **Rare Module**
+  Handles rare plant data with dedicated detail screens.
 
-* **Screens Layer**
-  Displays plant list and detailed plant information.
+* **Shared Resources**
 
-* **Widgets Layer**
-  Reusable UI components for plant display.
+  * `data.dart` → Central plant data source
+  * `colors.dart` → App-wide color theming
+
+* **Screens**
+
+  * `HomeScreen.dart` → Main navigation screen
+  * `Splashscreen.dart` → App launch screen
 
 * **Main Entry Point**
-  Initializes the app and handles navigation.
 
-Designed for **simplicity, performance, and offline usage**.
+  * `main.dart` initializes the app and routing
+
+Designed for **clarity, offline usage, and easy maintainability**.
 
 ---
 
@@ -155,16 +157,16 @@ flutter pub get
 flutter run
 ```
 
-No additional configuration is required.
+No backend, API, or authentication setup required.
 
 ---
 
 ## 🧪 Testing
 
-* Verify plant list loads correctly
-* Test XML parsing for all plant indexes
-* Ensure descriptions match selected plants
-* Test offline usage
+* Verify plant lists load correctly
+* Test navigation between categories
+* Check detail screens for all plants
+* Test offline functionality
 
 ---
 
@@ -172,9 +174,9 @@ No additional configuration is required.
 
 * 🔍 Search plants by name
 * ⭐ Favorite plants
-* 🌐 Multi-language plant descriptions
-* 🖼️ Image gallery for plants
-* 📚 Category-based plant grouping
+* 🌐 Multi-language support
+* 🖼️ Additional plant images
+* 📚 Category filtering and sorting
 
 ---
 
